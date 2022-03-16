@@ -24,26 +24,31 @@ export const ApiDemo2 = () => {
                         <th scope="col">userId</th>
                         <th scope="col">firstName</th>
                         <th scope="col">email</th>
-                        <th scope ="col">Action</th>
+                        <th scope="col">role</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         userList.map((user) => {
-                            return(
+                            return (
 
-                            <tr>
-                                <th scope="row">{user._id}</th>
-                                <td>{user.firstName}</td>
-                                <td>{user.email}</td>
+                                <tr>
+                                    <th scope="row">{user._id}</th>
+                                    <td>{user.firstName}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.roleId}</td>
 
-                                <td>
-                                    <button className='btn btn-danger'>DELETE</button>
-                                    <button className='btn btn-primary'>UPDATE</button>
-                                </td>
-                            </tr>
-                        
-                        )})
+                                    <td>
+                                        <Link to ={`table/data/${user.id}`}>delete</Link>
+                                        <button onClick={()=>{deleteData(user.id)}}>DELETE</button>
+                                        <button className='btn btn-primary'>UPDATE</button>
+                                    </td>
+                            
+                                </tr>
+
+                            )
+                        })
                     }
 
 

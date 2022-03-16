@@ -10,7 +10,7 @@ export const UserApi = () => {
     }
     const postData = () => {
         var data = {
-            firstName: 'vikas',email:'sanjay@gmail.com',password:'sanjay123'
+            firstName: 'Sanjay',email:'sanjay@gmail.com',password:'sanjay123'
             
         }
 
@@ -23,7 +23,7 @@ export const UserApi = () => {
         var id = "62263f7b4db3364764d8055b";
         axios.delete(`http://localhost:3001/users/` + id).then(res => {
             console.log(res);
-            if (res.status == 200) {
+            if (res.status === 200) {
                 alert("Deleted Successfully");
             } else {
                 console.log("not deleted");
@@ -34,8 +34,9 @@ export const UserApi = () => {
 
     const putData = () => {
     
-        var data={firstName:'ramesh',email:'ram@gmail.com',password:'ram123',userId:"6228813302f094a6d987673e"};
-        axios.put('http://localhost:3001/users',data).then(res=>{
+        var data={firstName:'ramesh',email:'ram@gmail.com',password:'ram123'};
+        var id = "62145bf57d6ef52f89a06dbc"
+        axios.put(`http://localhost:3001/users/` +id,data).then(res=>{
             console.log(res);
             if(res.status=200){
                 alert("updated Successfully");
