@@ -9,11 +9,13 @@ import {Logout} from './component/Logout'
 import { ApiDemo2 } from './component/ApiDemo2';
 // import { RoleApi } from './component/RoleApi';
   // import {UserApi} from './component/UserApi';
-// import { FileUpload } from './component/FileUpload';
+// import { FileUpload }  from './component/FileUpload';
 // import { SelectDemo } from './component/SelectDemo';
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import { ApiDemo } from './component/ApiDemo';
+import { UpdateData } from './component/UpdateData';
+import { DeleteData } from './component/DeleteDataApi';
 // import { CategoryApi } from './component/CategoryApi';
 // import { Daily_scheduleApi } from './component/Daily_schedule';
 // import {ReminderApi} from './component/ReminderApi';
@@ -24,8 +26,6 @@ function App() {
   return (
     <React.Fragment>
       <Navbar/>
-
-
       {/* <Login/> */}
       <Profile/>
       <Logout/>
@@ -47,6 +47,9 @@ function App() {
   <Route path='/login' element={<Login/>}/>
   <Route path='/profile' element={<Profile/>}/>
   <Route path='/logout' element={<Logout/>}/>
+  {/* <Route path='/ApiDemo2' element={<ApiDemo2/>}/> */}
+  <Route path='/table/delete/:id' element={<DeleteData/>}/>
+  <Route path='/table/update/:id' element={<UpdateData/>}/> 
 </Routes>
 </React.Fragment>
   );

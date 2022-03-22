@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 
 export const ApiDemo2 = () => {
     const [userList, setuserList] = useState([])
@@ -24,7 +26,7 @@ export const ApiDemo2 = () => {
                         <th scope="col">userId</th>
                         <th scope="col">firstName</th>
                         <th scope="col">email</th>
-                        <th scope="col">role</th>
+                        {/* <th scope="col">role</th> */}
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -37,12 +39,14 @@ export const ApiDemo2 = () => {
                                     <th scope="row">{user._id}</th>
                                     <td>{user.firstName}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.roleId}</td>
+                                    {/* <td>{user.roleId}</td> */}
 
                                     <td>
-                                        <Link to ={`table/data/${user.id}`}>delete</Link>
-                                        <button onClick={()=>{deleteData(user.id)}}>DELETE</button>
-                                        <button className='btn btn-primary'>UPDATE</button>
+                                        {/* <Link to ={`table/data/${user.id}`}>delete</Link> */}
+                                        <Link to ={`/table/delete/${user._id}`} className='btn btn-danger'>DELETE</Link>
+                                        {/* <button className='btn btn-primary'>UPDATE</button> */}
+                    
+                                        <Link  to = {`/table/update/${user._id}`} className = "btn btn-primary">UPDATE</Link>
                                     </td>
                             
                                 </tr>
